@@ -1,5 +1,7 @@
+import { useEffect } from "react"
 import RightBorderCard from "../components/RightBorderCard"
 import { capitalize } from "../utils/UtilFuction"
+import { animScale, groupStagger } from "../utils/GSAPAnim"
 
 function Experience() {
     const education = [
@@ -45,23 +47,39 @@ function Experience() {
         "zustand"
     ]
 
+    useEffect(() => {
+        const sectionExperience = document.querySelectorAll('.section-experience')
+        groupStagger(sectionExperience, 0.1)
+
+        const skillsLogo = document.querySelectorAll('.skills-logo')
+        skillsLogo.forEach(s => {
+            s.addEventListener('mouseenter', () => {
+                animScale(s, 1.2)
+            })
+
+            s.addEventListener('mouseleave', () => {
+                animScale(s, 1)
+            })
+        })
+    }, [])
+
     return (
         <div id="experience" className="py-40">
             <div className="flex">
                 <div className="w-1/2">
-                    <p className="section-desc">Education</p>
+                    <p className="section-desc section-experience">Education</p>
                     <br />
                     <div className="flex flex-col gap-6">
                     {
                         education.map(e => (
-                            <RightBorderCard {...e} key={e.title} />
+                            <RightBorderCard {...e} key={e.title}/>
                         ))
                     }
                     </div>
                 </div>
 
                 <div>
-                    <p className="section-desc">Experience</p>
+                    <p className="section-desc section-experience">Experience</p>
                     <br />
                     <div className="flex flex-col gap-6">
                     {
@@ -74,12 +92,12 @@ function Experience() {
             </div>
 
             <div className="flex gap-12 mt-20">
-                <p className="section-desc">Skills</p>
+                <p className="section-desc section-experience">Skills</p>
 
                 <div className="flex flex-wrap gap-4 border-l-4 pl-4 py-2 border-[#ffc653]">
                 {
                     skills.map(s => (
-                        <div className="flex flex-col justify-center items-center gap-2">
+                        <div className="flex flex-col justify-center items-center gap-2 section-experience skills-logo" key={s}>
                             <img src={`/skillsLogo/${s}.png`} className="w-8 aspect-square" />
                             <p className="text-pink">{ capitalize(s) }</p>
                         </div>

@@ -9,7 +9,7 @@ function Works() {
             <div className="grid grid-cols-2 gap-4 mt-4">
             {
                 projects.slice(projects.length - 2, projects.length).map(p => (
-                    <div className="flex flex-col gap-2">
+                    <div className="flex flex-col gap-2" key={p.name}>
                         <img src={p.imgUrl} alt={p.name} className="border" />
                         
                         <div className="flex justify-between items-center">

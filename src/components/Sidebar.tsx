@@ -1,5 +1,7 @@
+import { useEffect } from 'react'
 import { capitalize } from '../utils/UtilFuction'
 import ContactComponent from './ContactComponent'
+import { animateRotation } from '../utils/GSAPAnim'
 
 function Sidebar() {
     const sidebarLogo = [
@@ -8,6 +10,20 @@ function Sidebar() {
         'works',
         'contact'
     ]
+
+    useEffect(() => {
+        const sidebarLogo = document.querySelectorAll('.sidebar-logo')
+
+        sidebarLogo.forEach(s => {
+            s.addEventListener('mouseenter', () => {
+                animateRotation(s, 15)
+            })
+
+            s.addEventListener('mouseleave', () => {
+                animateRotation(s, 0)
+            })
+        })
+    }, [])
 
     return (
         <div className="w-1/4 h-full gradient-yp p-10 flex flex-col justify-between text-white font-bold fixed top-0 left-0">
@@ -20,10 +36,10 @@ function Sidebar() {
                 <div className="flex flex-col gap-2">
                 {
                     sidebarLogo.map(s => (
-                        <a href={`#${s}`}>
+                        <a href={`#${s}`} key={s}>
                             <div className="flex items-center gap-4">
                                 <div className="w-8">
-                                    <img src={`/${s}-logo.png`} />
+                                    <img src={`/${s}-logo.png`} className='sidebar-logo'/>
                                 </div>
 
                                 <p className="text-2xl mt-2">{ capitalize(s) }</p>
