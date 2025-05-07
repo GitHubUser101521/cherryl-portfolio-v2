@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+  font-family: "Epilogue", system-ui, "Segoe UI", "Open Sans", sans-serif;
+}
+
+.gradient-yp {
+  background: linear-gradient(to bottom, #ffc854, #f64f45);
+}
+
+.text-gradient-yp {
+  width: fit-content;
+  background-image: linear-gradient(to right, #f64f45, #ffc854);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  @apply font-bold text-5xl mt-2;
+}
+
+.section-desc {
+  @apply text-sm font-bold italic;
+}
+
+.swiper-btn {
+  @apply text-xl w-8 aspect-square text-white font-bold rounded-full bg-[#ef5244] cursor-pointer select-none;
+}
+
+/*  */
+
+.text-pink {
+  color: #f64f45;
+}
+
+/* For Chrome, Edge, and Safari */
+::-webkit-scrollbar {
+  width: 0px; /* Or height: 0px; for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent; /* Optional: make the thumb invisible too */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Optional: make the track invisible too */
+}
