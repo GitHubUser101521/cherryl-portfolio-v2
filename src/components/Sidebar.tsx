@@ -36,12 +36,11 @@ function Sidebar() {
                 <div className="flex flex-col gap-2">
                 {
                     sidebarLogo.map(s => (
-                        <a href={`#${s}`} key={s}>
+                        <a href={`#${s}`}>
                             <div className="flex items-center gap-4">
                                 <div className="w-8">
                                     <img src={`/${s}-logo.png`} className='sidebar-logo'/>
                                 </div>
-
                                 <p className="text-2xl mt-2">{ capitalize(s) }</p>
                             </div>
                         </a>

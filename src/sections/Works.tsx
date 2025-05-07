@@ -1,5 +1,6 @@
 import ProjectSwiper from "../components/ProjectSwiper"
 import { projects } from '../utils/projects'
+import { Link } from 'react-router'
 
 function Works() {
     return (
@@ -30,7 +31,10 @@ function Works() {
             <div className="mt-20">
                 <div className="flex justify-between items-center">
                     <div className="flex gap-2">
-                        <p className="section-desc">See More</p> <span className="font-bold">|</span> <p className="section-desc underline">See All</p>
+                        <p className="section-desc">See More</p> <span className="font-bold">|</span> 
+                        <p className="section-desc underline">
+                            <Link to={'/projects'}>See All</Link>
+                        </p>
                     </div>
 
                     <div className="flex gap-2">
