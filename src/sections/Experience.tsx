@@ -64,8 +64,8 @@ function Experience() {
     }, [])
 
     return (
-        <div id="experience" className="py-40">
-            <div className="flex">
+        <div id="experience" className="section">
+            <div className="flex flex-col md:flex-row gap-12">
                 <div className="w-1/2">
                     <p className="section-desc section-experience">Education</p>
                     <br />
@@ -94,7 +94,7 @@ function Experience() {
             <div className="flex gap-12 mt-20">
                 <p className="section-desc section-experience">Skills</p>
 
-                <div className="flex flex-wrap gap-4 border-l-4 pl-4 py-2 border-[#ffc653]">
+                <div className="grid grid-cols-3 md:grid-cols-4 lg:flex flex-wrap gap-4 border-l-4 pl-4 py-2 border-[#ffc653]">
                 {
                     skills.map(s => (
                         <div className="flex flex-col justify-center items-center gap-2 section-experience skills-logo" key={s}>

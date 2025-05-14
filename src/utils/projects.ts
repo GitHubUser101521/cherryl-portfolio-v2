@@ -30,7 +30,7 @@ export const projects = [
     {
         name: "Mock Dessert Shop",
         desc: 'A challenge from Front-end Mentor, but better',
-        tech: ['react', 'tailwindcss', 'GSAP'],
+        tech: ['react', 'tailwindcss', 'GSAP', 'zustand'],
         imgUrl: '/thumbnail/dessert-shopv2.png',
         url: 'https://dessert-shop-v2.vercel.app/'
     }

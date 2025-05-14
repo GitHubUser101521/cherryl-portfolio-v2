@@ -37,7 +37,7 @@ function ContactComponent({ nameShown }: ContactComponentPropType) {
     }, [])
 
     return (
-        <div className="flex flex-col gap-2 mb-4">
+        <div className="flex flex-col gap-2 mb-4 w-fit">
         {
             contactLogo.map(c => (
                 <a href={c.url} target="_blank" className="flex gap-4 items-center contact-logo" key={c.name} >

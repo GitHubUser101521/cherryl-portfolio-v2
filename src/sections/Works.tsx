@@ -4,10 +4,10 @@ import { Link } from 'react-router'
 
 function Works() {
     return (
-        <div id="works" className="py-40">
+        <div id="works" className="section">
             <p className="section-desc">Recent Projects</p>
 
-            <div className="grid grid-cols-2 gap-4 mt-4">
+            <div className="flex flex-col gap-12 md:grid grid-cols-2 md:gap-4 mt-4">
             {
                 projects.slice(projects.length - 2, projects.length).map(p => (
                     <div className="flex flex-col gap-2" key={p.name}>

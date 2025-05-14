@@ -16,7 +16,11 @@
   background-clip: text;
   color: transparent;
 
-  @apply font-bold text-5xl mt-2;
+  @apply font-bold md:text-5xl mt-2 text-4xl;
+}
+
+.section {
+  @apply py-40;
 }
 
 .section-desc {
@@ -27,7 +31,16 @@
   @apply text-xl w-8 aspect-square text-white font-bold rounded-full bg-[#ef5244] cursor-pointer select-none;
 }
 
-/*  */
+.sidebar-container {
+  @apply w-3/4 md:w-1/4 h-full p-10 flex flex-col justify-between text-white font-bold fixed top-0 left-0;
+}
+
+.sidebar-mobile {
+  @apply fixed top-0 bg-white w-full px-10 py-4 md:hidden flex justify-between items-center z-10;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* THEME */
 
 .text-pink {
   color: #f64f45;

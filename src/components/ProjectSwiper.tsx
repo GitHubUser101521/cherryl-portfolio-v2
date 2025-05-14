@@ -3,14 +3,24 @@ import { Pagination, Navigation } from 'swiper/modules'
 import { projects } from '../utils/projects'
 
 import 'swiper/swiper-bundle.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 function ProjectSwiper() {
     const [ hover, setHover ] =  useState([ false, '' ])
 
+    const [ windowWidth, setWindowWidth ] = useState(window.innerWidth)
+
+    useEffect(() => {
+        const handleResize = () => setWindowWidth(window.innerWidth)
+
+        window.addEventListener('resize', handleResize)
+
+        return () => window.removeEventListener('resize', handleResize)
+    }, [])
+
     return (
         <Swiper
-            slidesPerView={3} 
+            slidesPerView={windowWidth < 768 ? 1 : 3} 
             spaceBetween={30} 
             loop={true} 
             navigation={{

@@ -11,7 +11,7 @@ function Contact() {
 
     return (
         <div id="contact">
-            <div className="py-40">
+            <div className="section break-words">
                 <p className="section-desc mb-12 section-contact">Contact Me</p>
                 <div className="flex flex-col gap-8">
                     <p className="text-gradient-yp section-contact">Let's Get in Touch</p>
